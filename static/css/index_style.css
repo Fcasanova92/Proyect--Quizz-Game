@@ -1,0 +1,70 @@
+
+body{
+
+    background-color:antiquewhite;
+}
+
+.cuestionario{
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content:space-between;
+    align-items:center;
+    row-gap: 20px;
+}
+
+.answer{
+    width: 600px;
+    display: flex;
+    flex-flow: column nowrap;
+    border:  2px solid pink; 
+    border-radius: 10%;
+    gap: 15px;
+    padding: 15px;
+    box-shadow: inset 1px 1px 3px rgba(255,255,255,.7), inset 1px 1px 3px rgba(0,0,0,.1), 2px 2px 10px rgba(0,0,0,.1);
+
+    
+}
+
+.answer_title{
+
+    align-self: center; 
+    font-family:'Arial Narrow';
+    font-weight: bolder;
+    font-size: x-large;
+    
+
+}
+
+.answer_div{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: first baseline;
+    border:  5px solid pink;
+    column-gap: 10px;
+    padding-left: 10px;
+    box-shadow: inset 3px 3px 3px rgba(255,255,255,.7), inset -2px -2px 3px rgba(0,0,0,.1), 2px 2px 10px rgba(0,0,0,.1);
+
+
+
+
+}
+
+.answer_div:hover{
+
+    background-color:pink;
+}
+
+
+.answer_option{
+    align-self: center;
+    }
+
+    p{
+
+        align-self: center;
+        font-family:'Arial Narrow';
+        font-weight: bolder;
+        font-size: medium;
+    }
+    

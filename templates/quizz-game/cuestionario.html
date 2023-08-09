@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/index_style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/js/cuestionario_script.js"></script>
+  
+
+    <title>Document</title>
+</head>
+<body>
+    <section class="flex">
+
+        <header><h1 class="titulo">QUIZZ GAME</h1></header>
+
+        <h2>CATEGORIA</h2>
+
+
+        <form class="cuestionario" id="{{id}}" action="">
+
+            {% for pregunta in pregunta %} 
+
+            <div class="answer" id="cuestionario{{loop.index}}">
+
+                <h1 class="answer_title"> {{pregunta.titulo}} </h1>
+
+                {% for respuestas in pregunta.respuestas %}
+
+                    <div class="answer_div" id = "{{loop.index}}" for=""><input class="answer_option" id = {{loop.index}} value="{{loop.index}}" type="radio" name="answer{{pregunta.numero}}" onclick="respuesta('{{pregunta.numero}}', this)"><p>{{respuestas}}</p></div>
+        
+                {% endfor %}
+              
+            </div>
+
+            {% endfor %}
+
+            <button type="submit">enviar</button>
+
+            <p class="resultado">{{resultado}} </p>
+
+        </form>
+        
+        <p class="resultado"></p>
+
+    </section>
+
+
+</body>
+</html>

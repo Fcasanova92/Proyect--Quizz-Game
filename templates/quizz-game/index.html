@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/js/index_script.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <section class="categoria">
+        <a href = "{{ url_for('cuestionario', id = 0)}}"><div class="cat_cuestionario" onclick="select_Categoria(1)"><p>Historia</p></div></a> 
+        <a href = "{{ url_for('cuestionario', id = 1)}}"><div class="cat_cuestionario" onclick="select_Categoria(1)"><p>geografia</p></div></a> 
+        <a href = "{{ url_for('cuestionario', id = 2)}}"><div class="cat_cuestionario" onclick="select_Categoria(1)"><p>arte</p></div></a> 
+        <a href = "{{ url_for('cuestionario', id = 3)}}"><div class="cat_cuestionario" onclick="select_Categoria(1)"><p>ciencias naturales</p></div></a> 
+    </section>
+</body>
+</html>
