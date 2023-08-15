@@ -30,6 +30,12 @@ function option_Selected(){
 
 }
 
+$(document).ready(function(){
+
+    const timer = document.querySelector(".time");
+
+
+})
 
 $(document).ready(function(){
     
@@ -56,7 +62,7 @@ $(".cuestionario").on("submit", function(event){
         },
         success:function(response){
          
-           resultado.innerHTML=response.resultado
+           resultado.innerHTML= `Tu resultado es: ${response.resultado}`
         },
         error:function(response){
             alert("error")
