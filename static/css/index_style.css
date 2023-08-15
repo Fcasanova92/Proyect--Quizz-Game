@@ -4,6 +4,13 @@ body{
     background-color:antiquewhite;
 }
 
+.flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 1rem;
+}
+
 .cuestionario{
 
     display: flex;
@@ -67,4 +74,22 @@ body{
         font-weight: bolder;
         font-size: medium;
     }
+
+.titulo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
     
+.time{
+    width: 1200px;
+    height: 10px;
+    background: red;
+    transition: width 60s;
+}
+
+.time:hover{
+    width: 0px;
+}
+
