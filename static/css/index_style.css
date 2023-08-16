@@ -5,10 +5,16 @@ body{
 }
 
 .flex{
+    width: 50vw;
+    position:relative;
+    left:25vw;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     row-gap: 1rem;
+    border:  2px solid pink; 
+    border-radius: 5%;
+   
 }
 
 .cuestionario{
@@ -17,7 +23,7 @@ body{
     flex-flow: column nowrap;
     justify-content:space-between;
     align-items:center;
-    row-gap: 20px;
+    row-gap: 40px;
 }
 
 .answer{
@@ -81,11 +87,16 @@ body{
     justify-content: center;
     align-items: center;
 }
+
     
 .time{
-    align-self: flex-start;
+   
     width: 600px;
     height: 10px;
     background: red;
+    align-self: flex-start;
+    margin: 10px 0px 10px 190px;
+    
 }
+
 
