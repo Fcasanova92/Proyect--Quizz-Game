@@ -83,13 +83,9 @@ body{
 }
     
 .time{
-    width: 1200px;
+    align-self: flex-start;
+    width: 600px;
     height: 10px;
     background: red;
-    transition: width 60s;
-}
-
-.time:hover{
-    width: 0px;
 }
 

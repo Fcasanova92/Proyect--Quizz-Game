@@ -30,6 +30,7 @@ function option_Selected(){
 
 }
 
+
 $(document).ready(function(){
 
     const timer = document.querySelector(".time");
@@ -71,4 +72,60 @@ $(".cuestionario").on("submit", function(event){
 })
 
 })
+
+
+$(document).ready( ()=>{
+
+    const time = $(".time");
+
+    let time_width = time.width();
+
+    let num_time_out = 3
+
+
+    let time_out = setTimeout(()=>{
+
+        setInterval(()=>{
+
+            const counter = document.querySelector(".counter")
+    
+                if(num_time_out >= 0){
+    
+                    counter.innerHTML = num_time_out
+    
+                    num_time_out = num_time_out - 1;
+    
+    
+                }else{ 
+    
+                    clearInterval(time_out)
+    
+                 }
+    
+            },1000)
+
+    }, 3000) 
+
+    // if(time_out){
+
+    //     const time_interval =  setTimeout(()=> {setInterval(() => {
+
+    //         if (time_width >=0){
+            
+    //              time_width = time_width - 1
+         
+    //              time.width(time_width)
+            
+    //             }else{
+            
+    //                     clearInterval(time_interval)
+    //                 }
+                    
+    //             }, 100)}, 1000 ) 
+        
+    //     }
+
+        }
+        
+    ) 
 
