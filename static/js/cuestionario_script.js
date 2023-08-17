@@ -30,41 +30,43 @@ function option_Selected(){
 
 }
 
+// Sacar el script y reformular el backend realizado, hay que renderizar los resultados en una nueva pagina, 
+// de manera que podamos agregar animaciones
 
-$(document).ready(function(){
+// $(document).ready(function(){
     
-$(".cuestionario").on("submit", function(event){
+// $(".cuestionario").on("submit", function(event){
 
-    event.preventDefault();
+//     event.preventDefault();
 
-    let option_selected = option_Selected();
+//     let option_selected = option_Selected();
 
-    let resultado = document.querySelector(".resultado");
+//     let resultado = document.querySelector(".resultado");
 
-    let id = $(".cuestionario")[0].id
+//     let id = $(".cuestionario")[0].id
 
-    alert(id)
+//     alert(id)
 
-    $.ajax({
+//     $.ajax({
 
-        type:"POST",
-        url:"/resultado",
-        data:{
+//         type:"POST",
+//         url:"/resultado",
+//         data:{
     
-            data: option_selected,
-            id: id
-        },
-        success:function(response){
+//             data: option_selected,
+//             id: id
+//         },
+//         success:function(response){
          
-           resultado.innerHTML= `Tu resultado es: ${response.resultado}`
-        },
-        error:function(response){
-            alert("error")
-        }
-    })
-})
+//            resultado.innerHTML= `Tu resultado es: ${response.resultado}`
+//         },
+//         error:function(response){
+//             alert("error")
+//         }
+//     })
+// })
 
-})
+// })
 
 
 $(document).ready( ()=>{
@@ -73,22 +75,71 @@ $(document).ready( ()=>{
 
     let time_width = time.width();
 
+    let timer_p = document.querySelector(".timer")
+
+    btn_form = document.querySelector("button")
+
+    const time_interval = setTimeout(() => {
+
+        setInterval(() => {
+
+            if (time_width >=0){
+           
+                 time_width = time_width - 1;
+        
+                 time.width(time_width);
+           
+                }else{
+
+                    timer_p.innerHTML = "TIEMPO FINALIZADO"
+
+                    body_load_form(true)
+
+                    clearInterval(time_interval)
+
+                   // armar funcion ajax, enviar un valor booleano a cuestionario y realizar el rederizado para volver a jugar
+                   }
+                }, 50)
+        
+    }, 4000); 
+                
+                }) 
+
+$(document).ready(()=>{
+
+    let timer_value = 3
+    let timer_p = document.querySelector(".timer")
+    body_load_form(true)
+    let timer = setInterval(()=>{
+
+        if(timer_value >0 ){
+            timer_p.innerHTML = timer_value
+            timer_value = timer_value - 1
+
+        }else{
+
+            timer_p.innerHTML = "READY"
+            body_load_form(false)
+            clearInterval(timer)
+        }
+       
+
+    }, 1000)
+
     
 
-    const time_interval =  setInterval(() => {
-
-             if (time_width >=0){
-            
-                  time_width = time_width - 1;
-         
-                  time.width(time_width);
-            
-                 }else{
-                    clearInterval(time_interval)
-                    // armar funcion ajax, enviar un valor booleano a cuestionario y realizar el rederizado para volver a jugar
-                    }
-                 }, 50)}) 
+        
+})
 
 
+function body_load_form(bool){
 
+    let btn_form = document.querySelector("button")
 
+    let answer_div = document.querySelectorAll(".answer_option")
+
+    btn_form.disabled = bool
+
+    answer_div.forEach((answer)=>{answer.disabled =bool})
+
+}
