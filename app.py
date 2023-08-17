@@ -13,27 +13,22 @@ def index():
 @app.route("/cuestionario/<int:id>'")
 def cuestionario(id):
     dict = data_Cuestionarios(id)
-    print(dict)
     return render_template("quizz-game/cuestionario.html", pregunta=dict, id=id)
 
 
-@app.route("/resultado", methods=['POST'])
+@app.route("/cuestionario/resultado", methods=['POST'])
 def resultado():
-
     options_choices = request.form
-    options_choices = list(options_choices.lists())
-    option_value = options_choices[0][1]
-    id = int(options_choices[1][1][0])
-    option_correct = answer_Correct(id)
+    print(options_choices)
     resultado = 0
 
-    for i in range(len(option_value)):
+    # for i in range(len(option_value)):
 
-        if int(option_value[i]) == option_correct[i]:
+    #     if int(option_value[i]) == option_correct[i]:
 
-            resultado +=1
+    #         resultado +=1
             
-    return jsonify({"resultado": resultado})
+    return render_template("quizz-game/resultado.html", resultado = resultado)
 
 
 if __name__ == "__main__":
