@@ -1,31 +1,3 @@
- $(document).ready(function(){
-    
- $(".cuestionario").on("submit", function(){
-
-     $.ajax({
-
-         type:"POST",
-         url:"cuestionario/resultado",
-         data:{
-    
-             data: option_selected,
-             id: id
-         },
-         success:function(response){
-         
-            resultado.innerHTML= `Tu resultado es: ${response.resultado}`
-         },
-         error:function(response){
-             alert("error")
-         }
-     })
- })
-
- })
-
-
-
-
 
 let promise_resultado = new Promise((resolve, reject)=>{
 
@@ -43,6 +15,8 @@ $(document).ready(()=>{
 
     let rueda = document.querySelector(".rueda")
 
+    let value_resultado = document.querySelector(".valor_resultado")
+
     resultado.innerHTML = "loading result ...."
 
     promise_resultado.then(resolve =>{
@@ -50,6 +24,8 @@ $(document).ready(()=>{
         resultado.innerHTML = resolve
 
         rueda.style.display = "none"
+
+        value_resultado.style.display = "block"
     })
 })
 
