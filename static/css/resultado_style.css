@@ -28,6 +28,10 @@ body{
   animation: giro 1s linear infinite;
 }
 
+.valor_resultado{
+  display: none;
+}
+
 @keyframes giro {
   0% {
     transform: rotate(0deg);
