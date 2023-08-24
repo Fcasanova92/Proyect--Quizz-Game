@@ -33,40 +33,6 @@ function option_Selected(){
 // Sacar el script y reformular el backend realizado, hay que renderizar los resultados en una nueva pagina, 
 // de manera que podamos agregar animaciones
 
-// $(document).ready(function(){
-    
-// $(".cuestionario").on("submit", function(event){
-
-//     event.preventDefault();
-
-//     let option_selected = option_Selected();
-
-//     let resultado = document.querySelector(".resultado");
-
-//     let id = $(".cuestionario")[0].id
-
-//     alert(id)
-
-//     $.ajax({
-
-//         type:"POST",
-//         url:"/resultado",
-//         data:{
-    
-//             data: option_selected,
-//             id: id
-//         },
-//         success:function(response){
-         
-//            resultado.innerHTML= `Tu resultado es: ${response.resultado}`
-//         },
-//         error:function(response){
-//             alert("error")
-//         }
-//     })
-// })
-
-// })
 
 
 $(document).ready( ()=>{
