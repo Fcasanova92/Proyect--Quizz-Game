@@ -12,11 +12,15 @@ $(document).ready(()=>{
 
     let resultado =  document.querySelector(".load_resultado")
 
+    let rueda = document.querySelector(".rueda")
+
     resultado.innerHTML = "loading result ...."
 
     promise_resultado.then(resolve =>{
 
         resultado.innerHTML = resolve
+
+        rueda.style.display = "none"
     })
 })
 
