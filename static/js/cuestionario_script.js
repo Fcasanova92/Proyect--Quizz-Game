@@ -1,4 +1,10 @@
 
+// ARMAR UNA FUNCION QUE CONTROLE MEDIANTE UN VALOR BOOLEANO EL PRE LOAD, EN TERMINOS DE LOS BOTONES Y OPACIDAD
+// EN LA MISMA FUNCION DEBE DE GENERARSE UN CREATE HTML EL CUAL PERMITA VOLVER A LA SECCION DE CATEGORIA, SI EL 
+// TIEMPO FINALIZO, CONTROLANDO LA OPACIDAD
+
+
+// FUNCION QUE MANEJA EL COLOR EN LA SELECCION DE LAS OPCIONES DE LAS PREGUNTAS
 function respuesta(num_pregunta, seleccionada){
 
     div_answer = document.querySelector(`#cuestionario${num_pregunta}`).childNodes;
@@ -13,27 +19,7 @@ function respuesta(num_pregunta, seleccionada){
 
 }
 
-
-function option_Selected(){
-
-    let num_preguntas = $(".cuestionario").find('.answer').length 
-
-    let opciones_elegidas = []
-
-    for(i=1; i<=num_preguntas; i++){
-
-        opciones_elegidas.push($(`input[type=radio][name=answer${i}]:checked`).val())
-
-            }
-
-    return opciones_elegidas
-
-}
-
-// Sacar el script y reformular el backend realizado, hay que renderizar los resultados en una nueva pagina, 
-// de manera que podamos agregar animaciones
-
-
+// QUERY QUE CONTROLA LA BARRA DE TIEMPO
 
 $(document).ready( ()=>{
 
@@ -43,9 +29,9 @@ $(document).ready( ()=>{
 
     let timer_p = document.querySelector(".timer")
 
-    btn_form = document.querySelector("button")
+    let timer_load = document.querySelector(".timer_load")
 
-    const time_interval = setTimeout(() => {
+    let time_interval = setTimeout(() => {
 
         setInterval(() => {
 
@@ -57,13 +43,13 @@ $(document).ready( ()=>{
            
                 }else{
 
+                    timer_load.style.display = "flex"
+
                     timer_p.innerHTML = "TIEMPO FINALIZADO"
 
                     body_load_form(true)
 
                     clearInterval(time_interval)
-
-                   // armar funcion ajax, enviar un valor booleano a cuestionario y realizar el rederizado para volver a jugar
                    }
                 }, 50)
         
@@ -71,11 +57,16 @@ $(document).ready( ()=>{
                 
                 }) 
 
+// QUERY QUE CONTROLA EL CONTADOR
+
 $(document).ready(()=>{
 
     let timer_value = 3
     let timer_p = document.querySelector(".timer")
+    let timer_load = document.querySelector(".timer_load")
+    let form = $(".flex")
     body_load_form(true)
+    
     let timer = setInterval(()=>{
 
         if(timer_value >0 ){
@@ -84,7 +75,8 @@ $(document).ready(()=>{
 
         }else{
 
-            timer_p.innerHTML = "READY"
+            timer_load.style.display = "none"
+            form.css('opacity', 1);
             body_load_form(false)
             clearInterval(timer)
         }
@@ -97,13 +89,14 @@ $(document).ready(()=>{
         
 })
 
+// pre load y tiempo finalizado, anulacion del formulario
 
 function body_load_form(bool){
 
     let btn_form = document.querySelector("button")
 
     let answer_div = document.querySelectorAll(".answer_option")
-
+    
     btn_form.disabled = bool
 
     answer_div.forEach((answer)=>{answer.disabled =bool})

@@ -2,6 +2,7 @@
 body{
 
     background-color:antiquewhite;
+ 
 }
 
 .flex{
@@ -14,7 +15,9 @@ body{
     row-gap: 1rem;
     border:  2px solid pink; 
     border-radius: 5%;
-   
+    opacity: 0.5;
+    z-index: 1;
+
 }
 
 .cuestionario{
@@ -24,6 +27,7 @@ body{
     justify-content:space-between;
     align-items:center;
     row-gap: 40px;
+    
 }
 
 .answer{
@@ -96,7 +100,28 @@ body{
     background: red;
     align-self: flex-start;
     margin: 10px 0px 10px 190px;
+    background-color: blue;
     
+}
+
+.timer_load{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    z-index: 2;
+    position: absolute;
+    left: 200px;
+    right: 200px;
+    top: 500px;
+    bottom: 500px;
+}
+
+.timer{
+
+    text-align: center;
+    font-size: 75px;
+    padding: 10px;
+
 }
 
 
