@@ -45,7 +45,9 @@ $(document).ready( ()=>{
 
                     timer_load.style.display = "flex"
 
-                    timer_p.innerHTML = "TIEMPO FINALIZADO"
+                    // agregar un aref con url_for a index nuevamente
+
+                    timer_p.innerHTML = '<p>Tiempo finalizado </p><p> Volver a categorias</p> '
 
                     body_load_form(true)
 
@@ -64,7 +66,6 @@ $(document).ready(()=>{
     let timer_value = 3
     let timer_p = document.querySelector(".timer")
     let timer_load = document.querySelector(".timer_load")
-    let form = $(".flex")
     body_load_form(true)
     
     let timer = setInterval(()=>{
@@ -76,16 +77,11 @@ $(document).ready(()=>{
         }else{
 
             timer_load.style.display = "none"
-            form.css('opacity', 1);
             body_load_form(false)
             clearInterval(timer)
         }
        
-
     }, 1000)
-
-    
-
         
 })
 
@@ -93,12 +89,16 @@ $(document).ready(()=>{
 
 function body_load_form(bool){
 
-    let btn_form = document.querySelector("button")
+    let form = $(".flex")
 
-    let answer_div = document.querySelectorAll(".answer_option")
-    
-    btn_form.disabled = bool
+    if(bool===true){
 
-    answer_div.forEach((answer)=>{answer.disabled =bool})
+        form.css('display', 'none');
+
+    }else{
+
+        form.css('display', 'flex');
+
+    }
 
 }

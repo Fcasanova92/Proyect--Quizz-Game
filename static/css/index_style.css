@@ -1,7 +1,7 @@
 
 body{
 
-    background-color:antiquewhite;
+    background-color: blue;
  
 }
 
@@ -15,7 +15,6 @@ body{
     row-gap: 1rem;
     border:  2px solid pink; 
     border-radius: 5%;
-    opacity: 0.5;
     z-index: 1;
 
 }
