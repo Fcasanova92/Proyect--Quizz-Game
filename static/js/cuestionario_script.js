@@ -5,6 +5,8 @@
 
 
 // FUNCION QUE MANEJA EL COLOR EN LA SELECCION DE LAS OPCIONES DE LAS PREGUNTAS
+
+
 function respuesta(num_pregunta, seleccionada){
 
     div_answer = document.querySelector(`#cuestionario${num_pregunta}`).childNodes;
@@ -19,9 +21,39 @@ function respuesta(num_pregunta, seleccionada){
 
 }
 
+
+ let promise_resultado = new Promise((resolve, reject)=>{
+
+     setTimeout(()=>{
+
+        resolve(true)
+
+     }, 3000)
+
+ })
+
+$(document).ready(()=>{
+
+     let resultado =  document.querySelector(".await_form")
+
+     resultado.innerHTML = "loading query form ...."
+
+     body_load_form(true)
+
+     promise_resultado.then(resolve =>{
+
+     if(resolve === true){
+
+        timer()
+     }
+
+ })
+ })
+
+
 // QUERY QUE CONTROLA LA BARRA DE TIEMPO
 
-$(document).ready( ()=>{
+function timer_bar(){
 
     const time = $(".time");
 
@@ -31,9 +63,7 @@ $(document).ready( ()=>{
 
     let timer_load = document.querySelector(".timer_load")
 
-    let time_interval = setTimeout(() => {
-
-        setInterval(() => {
+    let time_interval = setInterval(()=>{
 
             if (time_width >=0){
            
@@ -53,39 +83,10 @@ $(document).ready( ()=>{
 
                     clearInterval(time_interval)
                    }
-                }, 50)
+                }, 50)}
         
-    }, 4000); 
-                
-                }) 
 
-// QUERY QUE CONTROLA EL CONTADOR
-
-$(document).ready(()=>{
-
-    let timer_value = 3
-    let timer_p = document.querySelector(".timer")
-    let timer_load = document.querySelector(".timer_load")
-    body_load_form(true)
-    
-    let timer = setInterval(()=>{
-
-        if(timer_value >0 ){
-            timer_p.innerHTML = timer_value
-            timer_value = timer_value - 1
-
-        }else{
-
-            timer_load.style.display = "none"
-            body_load_form(false)
-            clearInterval(timer)
-        }
-       
-    }, 1000)
-        
-})
-
-// pre load y tiempo finalizado, anulacion del formulario
+// pre load y tiempo finalizado
 
 function body_load_form(bool){
 
@@ -102,3 +103,29 @@ function body_load_form(bool){
     }
 
 }
+
+// QUERY QUE CONTROLA EL CONTADOR
+
+function timer(){
+
+    let timer_value = 3
+    let timer_p = document.querySelector(".timer")
+    let timer_load = document.querySelector(".timer_load")
+    let timer = setInterval(()=>{
+
+        if(timer_value >0 ){
+            timer_p.innerHTML = timer_value
+            timer_value = timer_value - 1
+
+        }else{
+
+            timer_load.style.display = "none"
+            clearInterval(timer)
+            body_load_form(false)
+            timer_bar()  
+        }
+    }, 1000)
+        
+}
+
+
