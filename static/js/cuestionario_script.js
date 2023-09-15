@@ -34,34 +34,30 @@ function respuesta(num_pregunta, seleccionada){
 
 $(document).ready(()=>{
 
-     let resultado =  document.querySelector(".await_form")
-
-     resultado.innerHTML = "loading query form ...."
-
+     let timer_p =  document.querySelector(".timer")
+     
      body_load_form(true)
+
+     timer_p.innerHTML = "loading query form ...."
 
      promise_resultado.then(resolve =>{
 
-     if(resolve === true){
+        if(resolve === true){
 
-        timer()
+            timer(timer_p)
+            resultado.style.display="none"
      }
-
- })
- })
+    })
+    })
 
 
 // QUERY QUE CONTROLA LA BARRA DE TIEMPO
 
-function timer_bar(){
+function timer_bar(timer_p){
 
     const time = $(".time");
 
     let time_width = time.width();
-
-    let timer_p = document.querySelector(".timer")
-
-    let timer_load = document.querySelector(".timer_load")
 
     let time_interval = setInterval(()=>{
 
@@ -72,16 +68,12 @@ function timer_bar(){
                  time.width(time_width);
            
                 }else{
-
-                    timer_load.style.display = "flex"
-
+                    
                     // agregar un aref con url_for a index nuevamente
-
-                    timer_p.innerHTML = '<p>Tiempo finalizado </p><p> Volver a categorias</p> '
-
-                    body_load_form(true)
-
                     clearInterval(time_interval)
+                    body_load_form(true)
+                    timer_p.innerHTML = '<p>Tiempo finalizado </p><p> Volver a categorias</p> '
+                   
                    }
                 }, 50)}
         
@@ -92,11 +84,17 @@ function body_load_form(bool){
 
     let form = $(".flex")
 
+    let timer_load = document.querySelector(".timer_load")
+
     if(bool===true){
+
+        timer_load.style.display = "flex"
 
         form.css('display', 'none');
 
     }else{
+
+        timer_load.style.display = "none"
 
         form.css('display', 'flex');
 
@@ -106,11 +104,9 @@ function body_load_form(bool){
 
 // QUERY QUE CONTROLA EL CONTADOR
 
-function timer(){
+function timer(timer_p){
 
     let timer_value = 3
-    let timer_p = document.querySelector(".timer")
-    let timer_load = document.querySelector(".timer_load")
     let timer = setInterval(()=>{
 
         if(timer_value >0 ){
@@ -118,11 +114,10 @@ function timer(){
             timer_value = timer_value - 1
 
         }else{
-
-            timer_load.style.display = "none"
+    
             clearInterval(timer)
             body_load_form(false)
-            timer_bar()  
+            timer_bar(timer_p)  
         }
     }, 1000)
         
