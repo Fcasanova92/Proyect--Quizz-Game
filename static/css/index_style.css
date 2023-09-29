@@ -1,23 +1,106 @@
+body{
+
+    cursor:pointer;
+}
+
+.flex{
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+    background-color: rgb(226, 223, 223);
+
+}
+
+header{
+
+    background-color: aqua;
+    padding: 100px;
+    align-self: stretch;
+}
+
+footer{
+
+    background-color: blue;
+    padding: 100px;
+    align-self: stretch;
+}
+
 .categoria{
 
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
+    justify-content: center;
     row-gap: 10px;
+    width: 300px;
+    height: 300px;
+    padding: 10px;
+    border:solid 1px;
+    border-radius: 50%;
+    background-color: blue;
+    transform: perspective(400px);
+   
+
+  
+
 }
 
 .cat_cuestionario{
 
     display:flex;
+    align-items: center;
+    justify-content: center;
     background-color: bisque;
-    transition: zoom .2s;
+    transition: transform .2s;
     border: 1px solid black;
-    width: 200px;
-
-    
+    border-radius: 15%;
+    width: 70px;
+    height: 50px;
 }
 
-.cat_cuestionario:hover{
+.choice_category{
 
-    -ms-zoom: scale(1.5);
+    transform: translateY(185px);
+    background-color: aliceblue;
+    border: 1px solid black;
+    border-radius: 50%;
+    padding: 110px;
+
+}
+
+.cat_cuestionario:nth-child(2){
+
+    transform: translateY(-50px);
+}
+
+.cat_cuestionario:nth-child(3){
+
+    transform: translate(140px, -20px);
+}
+.cat_cuestionario:nth-child(4){
+
+    transform: translate(-140px, -92px);
+}
+.cat_cuestionario:nth-child(5){
+
+    transform: translate(140px, -35px);
+}
+.cat_cuestionario:nth-child(6){
+
+    transform: translate(-140px, -100px);
+}
+
+.cat_cuestionario:nth-child(7){
+
+    transform: translate(0px,-50px);
+}
+
+
+.cat_cuestionario:hover{
+    display: block;
+    background-color: aquamarine;
+    cursor: pointer;
 }

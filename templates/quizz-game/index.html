@@ -9,11 +9,19 @@
     <title>Document</title>
 </head>
 <body>
-    <section class="categoria">
-        <div class="cat_cuestionario" onclick="select_Categoria(1)"><a href = "{{ url_for('cuestionario', id = 0)}}"><p>Historia</p></a></div>
-        <a href = "{{ url_for('cuestionario', id = 1)}}"><div class="cat_cuestionario" onclick="select_Categoria(1)"><p>geografia</p></div></a> 
-        <a href = "{{ url_for('cuestionario', id = 2)}}"><div class="cat_cuestionario" onclick="select_Categoria(1)"><p>arte</p></div></a> 
-        <a href = "{{ url_for('cuestionario', id = 3)}}"><div class="cat_cuestionario" onclick="select_Categoria(1)"><p>ciencias naturales</p></div></a> 
-    </section>
+
+    <section class="flex">
+        <header></header>
+        <section class="categoria">
+            <div class="choice_category"><h1>Choice Category</h1></div>
+            <div class="cat_cuestionario" onclick="select_Categoria(1)"><a href = "{{ url_for('cuestionario', id = 0)}}"><p>Historia Mundial</p></a></div>
+            <div class="cat_cuestionario" onclick="select_Categoria(1)"><a href = "{{ url_for('cuestionario', id = 1)}}"><p>Arte</p></a></div>
+            <div class="cat_cuestionario" onclick="select_Categoria(1)"><a href = "{{ url_for('cuestionario', id = 2)}}"><p>Geografia</p></a></div>
+            <div class="cat_cuestionario" onclick="select_Categoria(1)"><a href = "{{ url_for('cuestionario', id = 3)}}"><p>Fisica y Quimica</p></a></div>
+            <div class="cat_cuestionario" onclick="select_Categoria(1)"><a href = "{{ url_for('cuestionario', id = 4)}}"><p>Biologia</p></a></div>
+            <div class="cat_cuestionario" onclick="select_Categoria(1)"><a href = "{{ url_for('cuestionario', id = 5)}}"><p>Cine y Series</p></a></div>
+        </section> 
+        <footer></footer> 
+    </section> 
 </body>
 </html>
