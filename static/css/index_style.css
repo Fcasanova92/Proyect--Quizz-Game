@@ -39,7 +39,6 @@ footer{
     height: 300px;
     padding: 10px;
     border:solid 1px;
-    border-radius: 50%;
     background-color: blue;
     transform: perspective(400px);
    
@@ -56,46 +55,8 @@ footer{
     background-color: bisque;
     transition: transform .2s;
     border: 1px solid black;
-    border-radius: 15%;
     width: 70px;
     height: 50px;
-}
-
-.choice_category{
-
-    transform: translateY(185px);
-    background-color: aliceblue;
-    border: 1px solid black;
-    border-radius: 50%;
-    padding: 110px;
-
-}
-
-.cat_cuestionario:nth-child(2){
-
-    transform: translateY(-50px);
-}
-
-.cat_cuestionario:nth-child(3){
-
-    transform: translate(140px, -20px);
-}
-.cat_cuestionario:nth-child(4){
-
-    transform: translate(-140px, -92px);
-}
-.cat_cuestionario:nth-child(5){
-
-    transform: translate(140px, -35px);
-}
-.cat_cuestionario:nth-child(6){
-
-    transform: translate(-140px, -100px);
-}
-
-.cat_cuestionario:nth-child(7){
-
-    transform: translate(0px,-50px);
 }
 
 
