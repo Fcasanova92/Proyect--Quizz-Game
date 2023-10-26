@@ -1,9 +1,14 @@
+*{
+
+    text-decoration: none;
+    box-shadow: none;
+    background-color: #f3fafc;
+}
+
 body{
-    height:100%;
     display: flex;
     flex-flow: column;
     cursor:pointer;
-    margin: 10px;
 }
 
 .flex{
@@ -17,21 +22,14 @@ body{
 
 }
 
-header{
-
-    background-color: aqua;
+header, footer{
     flex-grow: 1;
     flex-basis: 20%;
     align-self: stretch;
+    background-color: aliceblue;
 }
 
-footer{
 
-    background-color: blue;
-    flex-grow: 1;
-    flex-basis: 20%;
-    align-self: stretch;
-}
 
 .categoria{
     display: flex;
@@ -42,24 +40,30 @@ footer{
     flex-grow: 2;
     flex-basis: 60%;
     border:solid 1px;
-    background-color: blue;
+    background-color: #00b8de;
    
 }
 
 .cat_cuestionario{
-    margin: 10px;
+    margin: 15px;
     display:flex;
     align-items: center;
     flex-grow: 1;
-    flex-basis: 25%;
+    flex-basis: 30%;
     justify-content: center;
-    background-color: bisque;
+    background-color: rgb(252, 252, 252);
     transition: transform .2s;
     border: 1px solid black;
 }
 
+ p{
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    color: black;
+ }
 
 .cat_cuestionario:hover{
-    background-color: aquamarine;
+    background-color: #9adce9f8;
     cursor: pointer;
 }
