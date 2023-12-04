@@ -11,13 +11,13 @@ function respuesta(num_pregunta, seleccionada){
 
     div_answer = document.querySelector(`#cuestionario${num_pregunta}`).childNodes;
 
-    div_answer[3].style.backgroundColor = "antiquewhite";
+    div_answer[3].style.backgroundColor = "#00b8de";
 
-    div_answer[5].style.backgroundColor = "antiquewhite";
+    div_answer[5].style.backgroundColor = "#00b8de";
 
-    div_answer[7].style.backgroundColor = "antiquewhite";
+    div_answer[7].style.backgroundColor = "#00b8de";
 
-    seleccionada.parentNode.style.backgroundColor="pink";
+    seleccionada.parentNode.style.backgroundColor="rgb(166, 228, 240)";
 
 }
 

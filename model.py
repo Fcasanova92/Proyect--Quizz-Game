@@ -1,16 +1,25 @@
 from data import cuestionarios
 
-def data_Cuestionarios(num_cuestionario):
+class Cuestionario:
 
-   
-    return cuestionarios[num_cuestionario]
+    def __init__(self, num_cuestionario):
 
+        self.data = cuestionarios[num_cuestionario]
     
-def answer_Correct(num_cuestionario):
+    def question_Data(self):
 
-    answer_correct = (([3,2,1]),([3,2,1]),([3,2,1]),([3,2,1]))
+        return self.data
+    
+    def answer_Correct(self):
 
-    return answer_correct[num_cuestionario]
+        choice_correct=[]
+
+        for i in range(len(self.data)):
+
+            choice_correct.append(self.data[i]["correcta"])
+
+        return choice_correct
+
 
     
         

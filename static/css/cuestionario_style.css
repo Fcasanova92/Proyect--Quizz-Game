@@ -13,10 +13,6 @@ body{
     flex-direction: column;
     justify-content: space-between;
     row-gap: 1rem;
-    border:  2px solid pink; 
-    border-radius: 5%;
-    z-index: 1;
-
 }
 
 .cuestionario{
@@ -33,7 +29,7 @@ body{
     width: 600px;
     display: flex;
     flex-flow: column nowrap;
-    border:  2px solid pink; 
+    border:  2px solid  #00b8de;
     border-radius: 10%;
     gap: 15px;
     padding: 15px;
@@ -58,11 +54,9 @@ body{
     display: flex;
     flex-flow: row nowrap;
     justify-content: first baseline;
-    border:  5px solid pink;
+    border:  5px solid rgb(253, 253, 253);
     column-gap: 10px;
     padding-left: 10px;
-    box-shadow: inset 3px 3px 3px rgba(255,255,255,.7), inset -2px -2px 3px rgba(0,0,0,.1), 2px 2px 10px rgba(0,0,0,.1);
-
 
 
 
@@ -70,12 +64,13 @@ body{
 
 .answer_div:hover{
 
-    background-color:pink;
+    background-color:rgb(166, 228, 240)
 }
 
 
 .answer_option{
     align-self: center;
+    background-color: #00b8de;
     }
 
     p{
@@ -98,7 +93,6 @@ body{
    
     width: 600px;
     height: 10px;
-    background: red;
     align-self: flex-start;
     margin: 10px 0px 10px 190px;
     background-color: blue;
@@ -123,7 +117,7 @@ body{
     margin-top: 2em;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat';
     font-weight: 900;
   }
 
