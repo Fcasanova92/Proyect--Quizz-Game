@@ -9,11 +9,13 @@
     <title>Document</title>
 </head>
 <body>
+    {% block content %}
     <div id="contenedor">
         <div class="contenedor-loader">
           <div class="rueda"></div>
         </div>
         <p class="load_resultado"></p><p class="valor_resultado">{{resultado}}</p>
     </div>
+    {% endblock %}
 </body>
 </html>

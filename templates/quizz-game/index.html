@@ -1,24 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/css/index_style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script type="text/javascript" src="/static/js/index_script.js"></script>
-    <title>Document</title>
-</head>
-<body>
-    <section class="flex">
 
-        {% extends "base.html" %}
+{% extends "quizz-game/base.html" %}
 
-        <header><h1>Quizz Game</h1></header>
+        {% block css%}<link rel="stylesheet" href="/static/css/index_style.css">{% endblock %}
+        {% block query %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script type="text/javascript" src="/static/js/cuestionario_script.js"></script>
+        {% endblock %}
    
         {% block content %}
 
         <section class="categoria">
-            <a class="cat_cuestionario" href = "{{ url_for('cuestionario', id = 0)}}" >Arte</a>
+            <a class="cat_cuestionario" href = "{{ url_for('cuestionario', id = 0)}}">Arte</a>
             <a class="cat_cuestionario" href = "{{ url_for('cuestionario', id = 2)}}" >Historia</a>
             <a class="cat_cuestionario" href = "{{ url_for('cuestionario', id = 3)}}" >Quimica</a>
             <a class="cat_cuestionario" href = "{{ url_for('cuestionario', id = 4)}}" >Fisica</a>
@@ -27,8 +19,3 @@
         </section>
 
         {% endblock %}
-
-        <footer><h1>@fercasa</h1></footer> 
-    </section> 
-</body>
-</html>

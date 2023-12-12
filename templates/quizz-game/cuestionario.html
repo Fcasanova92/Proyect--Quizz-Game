@@ -1,37 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/css/cuestionario_style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script type="text/javascript" src="/static/js/cuestionario_script.js"></script>
+{% extends "quizz-game/base.html" %}
 
-
-
-<title>Document</title>
-</head>
-<body>
-
-    {% extends "base.html" %}
-
-    <section class="timer_load">
-
-        <p class="timer"></p>
-
-    </section>
-
-    <section class="flex">
-
-        <header class="titulo">
-            
-            <h1>QUIZZ GAME</h1>
-
-            <h2 class="titulo">CATEGORIA</h2>
-        
-        </header>
+        {% block css%} <link rel="stylesheet" href="/static/css/cuestionario_style.css"> {% endblock %}
+        {% block query %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script type="text/javascript" src="/static/js/cuestionario_script.js"></script>
+        {% endblock %}
 
         {% block content %}
+
+        
+        <section class="timer_load">
+
+            <p class="timer"></p>
+    
+        </section>
+
+        <h2 class="titulo">CATEGORIA</h2>
+
         <form class="cuestionario" id="{{id}}" action="/cuestionario/{{id}}/resultado" method="post">
 
             <div class="time_game">
@@ -61,9 +46,10 @@
             <button class="btn_form" type="submit">enviar</button>
 
         </form>
-        {% endblock %}
 
-    </section>
+
+        
+        {% endblock %}
 
 </body>
 </html>
