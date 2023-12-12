@@ -10,15 +10,24 @@
 </head>
 <body>
     <section class="flex">
+
+        {% extends "base.html" %}
+
         <header><h1>Quizz Game</h1></header>
+   
+        {% block content %}
+
         <section class="categoria">
-            <a class="cat_cuestionario" href = "{{ url_for('cuestionario', id = 1)}}" >Arte</a>
+            <a class="cat_cuestionario" href = "{{ url_for('cuestionario', id = 0)}}" >Arte</a>
             <a class="cat_cuestionario" href = "{{ url_for('cuestionario', id = 2)}}" >Historia</a>
             <a class="cat_cuestionario" href = "{{ url_for('cuestionario', id = 3)}}" >Quimica</a>
             <a class="cat_cuestionario" href = "{{ url_for('cuestionario', id = 4)}}" >Fisica</a>
             <a class="cat_cuestionario" href = "{{ url_for('cuestionario', id = 5)}}" >Geografia</a>
             <a class="cat_cuestionario" href = "{{ url_for('cuestionario', id = 6)}}" >Literatura</a>
-        </section> 
+        </section>
+
+        {% endblock %}
+
         <footer><h1>@fercasa</h1></footer> 
     </section> 
 </body>

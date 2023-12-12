@@ -11,11 +11,13 @@ function respuesta(num_pregunta, seleccionada){
 
     div_answer = document.querySelector(`#cuestionario${num_pregunta}`).childNodes;
 
-    div_answer[3].style.backgroundColor = "#00b8de";
+    div_answer[3].style.backgroundColor = " #ffffff";
 
-    div_answer[5].style.backgroundColor = "#00b8de";
+    div_answer[5].style.backgroundColor = " #ffffff";
 
-    div_answer[7].style.backgroundColor = "#00b8de";
+    div_answer[7].style.backgroundColor = " #ffffff";
+
+    div_answer[9].style.backgroundColor = " #ffffff";
 
     seleccionada.parentNode.style.backgroundColor="rgb(166, 228, 240)";
 
@@ -55,7 +57,7 @@ $(document).ready(()=>{
 
 function timer_bar(timer_p){
 
-    const time = $(".time");
+    const time = $(".time_bar");
 
     let time_width = time.width();
 

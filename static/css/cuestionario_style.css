@@ -1,7 +1,7 @@
 @import url('//fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&display=swap');
 body{
 
-    background-color: #00b8de;
+    background-color: #ffffff;
  
 }
 
@@ -17,11 +17,13 @@ body{
 
 .cuestionario{
 
+    flex-basis: 30%;
+    flex-grow: 1;
     display: flex;
     flex-flow: column nowrap;
-    justify-content:space-between;
+    justify-content:center;
     align-items:center;
-    row-gap: 40px;
+    row-gap: 15px;
     
 }
 
@@ -29,8 +31,9 @@ body{
     width: 600px;
     display: flex;
     flex-flow: column nowrap;
-    border:  2px solid  #00b8de;
-    border-radius: 10%;
+    border-style: dashed;
+    border-color: #000000;
+    border-radius: 5%;
     gap: 15px;
     padding: 15px;
     box-shadow: inset 1px 1px 3px rgba(255,255,255,.7), inset 1px 1px 3px rgba(0,0,0,.1), 2px 2px 10px rgba(0,0,0,.1);
@@ -54,9 +57,10 @@ body{
     display: flex;
     flex-flow: row nowrap;
     justify-content: first baseline;
-    border:  5px solid rgb(253, 253, 253);
+    background-color: #ffffff;
     column-gap: 10px;
     padding-left: 10px;
+    border: 1px black dashed;
 
 
 
@@ -71,6 +75,7 @@ body{
 .answer_option{
     align-self: center;
     background-color: #00b8de;
+    
     }
 
     p{
@@ -88,14 +93,25 @@ body{
     align-items: center;
 }
 
+.time_game{
+
+    display: flex;
+    flex-flow: row ;
+    width: 600px;
+    background-color: #ffffff;
+    gap: 5px;
+    justify-content: baseline;
+    align-items: center;
+
+}
     
-.time{
+.time_bar{
    
     width: 600px;
-    height: 10px;
-    align-self: flex-start;
-    margin: 10px 0px 10px 190px;
-    background-color: blue;
+    padding: 5px;
+    background-color: #00b8de;
+    border-radius: 2%;
+    align-self: center;
     
 }
 
@@ -107,7 +123,7 @@ body{
     position: absolute;
     left: 200px;
     right: 200px;
-    top: 500px;
+    top: 350px;
     bottom: 500px;
 }
 
