@@ -1,14 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% extends "quizz-game/base.html" %}
+
+
+{% block query %}
     <link rel="stylesheet" href="/static/css/resultado_style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script type="text/javascript"  src="/static/js/resultado_script.js"></script>
-    <title>Document</title>
-</head>
-<body>
+{% endblock %}
+
     {% block content %}
     <div id="contenedor">
         <div class="contenedor-loader">
@@ -17,5 +15,3 @@
         <p class="load_resultado"></p><p class="valor_resultado">{{resultado}}</p>
     </div>
     {% endblock %}
-</body>
-</html>
