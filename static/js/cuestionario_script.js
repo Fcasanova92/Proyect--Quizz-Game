@@ -47,7 +47,7 @@ $(document).ready(()=>{
         if(resolve === true){
 
             timer(timer_p)
-            resultado.style.display="none"
+            
      }
     })
     })
@@ -84,7 +84,7 @@ function timer_bar(timer_p){
 
 function body_load_form(bool){
 
-    let form = $(".flex")
+    let form = $(".form")
 
     let timer_load = document.querySelector(".timer_load")
 
